@@ -29,3 +29,8 @@ jobs:
     - run: npm install
     - run: npm run test:unit
     - run: echo "monemone"
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.SECRET_ID }}
+        api-key: ${{ secrets.SECRET_API_KEY }}
